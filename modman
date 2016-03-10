@@ -1,0 +1,12 @@
+app/code/community/MageProfis/GoogleMaps                                        app/code/community/MageProfis/GoogleMaps
+
+app/design/adminhtml/default/default/layout/mp_googlemaps.xml                   app/design/adminhtml/default/default/layout/mp_googlemaps.xml
+app/design/adminhtml/default/default/template/mp_googlemaps                     app/design/adminhtml/default/default/template/mp_googlemaps
+app/design/frontend/base/default/template/mp_googlemaps                         app/design/frontend/base/default/template/mp_googlemaps
+
+app/etc/modules/MageProfis_GoogleMaps.xml                                       app/etc/modules/MageProfis_GoogleMaps.xml
+
+app/locale/de_DE/MageProfis_GoogleMaps.csv                                      app/locale/de_DE/MageProfis_GoogleMaps.csv
+app/locale/en_US/MageProfis_GoogleMaps.csv                                      app/locale/en_US/MageProfis_GoogleMaps.csv
+
+skin/adminhtml/default/default/images/widget/mp_googlemaps__widget_gmap.gif     skin/adminhtml/default/default/images/widget/mp_googlemaps__widget_gmap.gif

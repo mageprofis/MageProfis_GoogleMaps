@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <MageProfis_GoogleMaps>
+            <version>1.0.0</version>
+        </MageProfis_GoogleMaps>
+    </modules>
+
+    <global>
+        <blocks>
+            <mp_googlemaps>
+                <class>MageProfis_GoogleMaps_Block</class>
+            </mp_googlemaps>
+        </blocks>
+        <helpers>
+            <mp_googlemaps>
+                <class>MageProfis_GoogleMaps_Helper</class>
+            </mp_googlemaps>
+        </helpers>
+    </global>
+
+    <admin>
+        <routers>
+            <mp_googlemaps>
+                <use>admin</use>
+                <args>
+                    <module>MageProfis_GoogleMaps</module>
+                    <frontName>mp_googlemaps</frontName>
+                </args>
+            </mp_googlemaps>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <mp_googlemaps before="Mage_Widget_Adminhtml">MageProfis_GoogleMaps_Adminhtml</mp_googlemaps>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <mp_googlemaps>
+                    <file>mp_googlemaps.xml</file>
+                </mp_googlemaps>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <mp_googlemaps>
+                    <files>
+                        <default>MageProfis_GoogleMaps.csv</default>
+                    </files>
+                </mp_googlemaps>
+            </modules>
+        </translate>
+    </adminhtml>
+</config>

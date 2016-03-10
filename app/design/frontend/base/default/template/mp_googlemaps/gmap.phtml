@@ -1,0 +1,35 @@
+<div class="mp-gmap">
+    <div class="gmap-map">
+        <div id="<?php echo $this->getMapId() ?>" style="height:320px; border:solid #ddd 1px;"></div>
+    </div>
+    <?php if ($this->getContentHtml() != ''): ?>
+        <div class="gmap-text">
+            <?php echo $this->getContentHtml(); ?>
+        </div>
+    <?php endif; ?>
+    <?php $this->getAddress(); ?>
+    <script>
+        var maps = maps || [];
+        maps.push(function initMap() {
+            var map = new google.maps.Map(document.getElementById('<?php echo $this->getMapId() ?>'), {
+                center: {lat: <?php echo $this->getLat(); ?>, lng: <?php echo $this->getLng(); ?>},
+                zoom: <?php echo $this->getZoom(); ?>
+            });
+
+            var marker = new google.maps.Marker({
+                position: {lat: <?php echo $this->getLat(); ?>, lng: <?php echo $this->getLng(); ?>},
+                map: map,
+                title: ''
+            });
+
+            map.addListener('click', function() {
+                var lat = map.getCenter().lat(),
+                    lng = map.getCenter().lng(),
+                    zoom = map.getZoom(),
+                    q = '<?php echo $this->getAddress(); ?>',
+                    url = "https://maps.google.com/maps?ll=" + lat + "," + lng + "&z=" + zoom + "&t=m&hl=de&gl=US&mapclient=embed&q=" + q;
+                window.open(url, 'GMap');
+            });
+        });
+    </script>
+</div>

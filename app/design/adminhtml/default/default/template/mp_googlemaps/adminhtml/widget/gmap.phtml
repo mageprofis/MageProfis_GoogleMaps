@@ -1,0 +1,53 @@
+<div>
+    <div id="gmap" style="width:98%; height:300px; border:solid #d6d6d6 1px;"></div>
+    <p class="note" id="note_<?php echo $this->getFieldsetId() ?>_map" style="width:98%;"><span><?php echo $this->__('Move pin to desired location and set zoom level') ?></span></p>
+    <script type="text/javascript">//<![CDATA[
+        var map,
+            imi = false, // Is Map Initialized
+            url = 'http://maps.googleapis.com/maps/api/js?key=<?php echo $this->getApiKey(); ?>&callback=initMap',
+            wid = '<?php echo $this->getFieldsetId() ?>'; // Widget ID
+
+        $$('head script').each(function(e) {
+            if ($(e).src === url) {
+                imi = true;
+            }
+        });
+
+        if (!imi) {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = url;
+            document.getElementsByTagName("head")[0].appendChild(script);
+        } else {
+            initMap();
+        }
+
+        initMap = function () {
+            var lat  = parseFloat($(wid + '_lat').value) || 52.2689,
+                lng  = parseFloat($(wid + '_lng').value) || 10.5268,
+                zoom = parseInt($(wid + '_zoom').value, 10) || 9;
+
+            map = new google.maps.Map(document.getElementById('gmap'), {
+                center: {lat:lat, lng:lng},
+                zoom: zoom
+            });
+
+            var marker = new google.maps.Marker({
+                position: {lat:lat, lng:lng},
+                map: map,
+                title: '<?php echo $this->__('Move pin to desired location') ?>',
+                draggable: true
+            });
+
+            map.addListener('zoom_changed', function() {
+                $(wid + '_zoom').value = map.getZoom();
+            });
+
+            marker.addListener('dragend', function() {
+                var pos = marker.getPosition();
+                $(wid + '_lat').value = pos.lat();
+                $(wid + '_lng').value = pos.lng();
+            });
+        };
+    //]]></script>
+</div>

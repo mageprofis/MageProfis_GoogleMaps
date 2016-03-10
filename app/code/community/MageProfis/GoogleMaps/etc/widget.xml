@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<widgets>
+    <googlemap type="mp_googlemaps/widget_gmap" translate="name description" module="mp_googlemaps">
+        <name>MageProfis - Google Maps</name>
+        <description>Renders Google Map at a specified point</description>
+        <parameters>
+            <lat translate="label">
+                <visible>1</visible>
+                <label>Latitude</label>
+                <type>text</type>
+                <required>1</required>
+                <sort_order>1</sort_order>
+            </lat>
+            <lng translate="label">
+                <visible>1</visible>
+                <label>Longitude</label>
+                <type>text</type>
+                <required>1</required>
+                <sort_order>2</sort_order>
+            </lng>
+            <zoom translate="label">
+                <visible>1</visible>
+                <label>Zoom</label>
+                <type>text</type>
+                <required>1</required>
+                <value>9</value>
+                <sort_order>3</sort_order>
+            </zoom>
+            <map type="complex" translate="label">
+                <visible>1</visible>
+                <required>0</required>
+                <label>Map</label>
+                <sort_order>10</sort_order>
+                <type>label</type>
+                <helper_block>
+                    <type>mp_googlemaps/adminhtml_widget_gmap</type>
+                </helper_block>
+            </map>
+            <content_html translate="label description">
+                <visible>1</visible>
+                <label>Content</label>
+                <description>Optional (html) content</description>
+                <type>textarea</type>
+                <sort_order>20</sort_order>
+            </content_html>
+        </parameters>
+    </googlemap>
+</widgets>

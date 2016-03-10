@@ -1,0 +1,19 @@
+{
+  "name": "mageprofis/googlemaps",
+  "description": "Add Google Maps to any CMS content area",
+  "license":"OSL-3.0",
+  "type": "magento-module",
+  "require": {
+    "php": ">=5.3"
+  },
+  "suggest": {
+    "magento-hackathon/magento-composer-installer": "*"
+  },
+  "authors": [
+    {
+      "name": "Volker Thiel",
+      "email": "volker@mage-profis.de",
+      "role": "Author/Maintainer"
+    }
+  ]
+}

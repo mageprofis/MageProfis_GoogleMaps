@@ -1,0 +1,10 @@
+<script type="text/javascript">
+    //<![CDATA[
+    function initMaps() {
+        for (var i=0; i<maps.length; i++) {
+            maps[i]();
+        }
+    }
+    //]]>
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo Mage::helper('mp_googlemaps')->getApiKey(); ?>&callback=initMaps" async defer></script>
