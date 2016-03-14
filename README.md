@@ -1,18 +1,11 @@
 MageProfis GoogleMaps Extension
 =====================
 
-Facts
------
-- version: 1.0.0
-- [extension on GitHub](https://github.com/mageprofis/MageProfis_GoogleMaps)
-
-Description
------------
 > **tl;dr**: Add Google Maps to any CMS content area.
 
 This module adds a Magento widget that can be used like any other widget (e.g. on CMS pages, static blocks, ...). Just select the widget from the drop down list, move the pin to the desired location and set a zoom level. If you like, you can add a (HTML) description. If you do, you should considger using a microformat to describe the data (like an address). More information about microformats can be found [here](https://developers.google.com/structured-data/schema-org) and [here](http://schema.org/). A click on the map will open the target in a new window/tab.
 
-# Example
+##### Example
 
 ```html
 <div class="address" itemscope itemtype="http://schema.org/LocalBusiness">
@@ -25,31 +18,36 @@ This module adds a Magento widget that can be used like any other widget (e.g. o
 
 Please take notice of the P tag with the `itemprop="address"` attribute. The innerHTML will be used as address for the external link.
 
-Requirements
-------------
+### Important notice
+
+*The widget stores all values as `Base64` encoded strings, since Magentos WYSIWYG editor breaks the widget if you use quotation marks in a field. If you want to use the widget in a layout.xml file you have to base64-encode the values on your own.*
+
+
+### Requirements
+
 - PHP >= 5.3.0
 
-Compatibility
--------------
+### Compatibility
+
 - Magento >= 1.5
 
-Support
--------
+### Support
+
 If you have any issues with this extension, open an issue on [GitHub](https://github.com/mageprofis/MageProfis_GoogleMaps/issues).
 
-Contribution
-------------
+## Contribution
+
 Any contribution is highly appreciated. The best way to contribute code is to open a [pull request on GitHub](https://help.github.com/articles/using-pull-requests).
 
-Developer
----------
+### Developer
+
 Volker Thiel
 [http://www.mage-profis.de](http://www.mage-profis.de)
 
-Licence
--------
+### Licence
+
 [OSL - Open Software Licence 3.0](http://opensource.org/licenses/osl-3.0.php)
 
-Copyright
----------
+### Copyright
+
 (c) 2016 Mage-Profis GmbH
