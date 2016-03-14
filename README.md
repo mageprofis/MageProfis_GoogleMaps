@@ -8,7 +8,22 @@ Facts
 
 Description
 -----------
-Add Google Maps to any CMS content area.
+> **tl;dr**: Add Google Maps to any CMS content area.
+
+This module adds a Magento widget that can be used like any other widget (e.g. on CMS pages, static blocks, ...). Just select the widget from the drop down list, move the pin to the desired location and set a zoom level. If you like, you can add a (HTML) description. If you do, you should considger using a microformat to describe the data (like an address). More information about microformats can be found [here](https://developers.google.com/structured-data/schema-org) and [here](http://schema.org/). A click on the map will open the target in a new window/tab.
+
+# Example
+
+```html
+<div class="address" itemscope itemtype="http://schema.org/LocalBusiness">
+    <p><b><span itemprop="name">Company name</span> Location</b></p>
+    <p itemprop="address">Street No.<br>Zip-Code City</p>
+    <p>Tel. <span class="tel" itemprop="telephone">01234/56789</span><br>Fax <span class="fax" itemprop="faxNumber">01234/56788</span></p>
+    <p><a href="mailto:info@domain.com" itemprop="email">info@domain.com</a></p>
+</div>
+```
+
+Please take notice of the P tag with the `itemprop="address"` attribute. The innerHTML will be used as address for the external link.
 
 Requirements
 ------------
